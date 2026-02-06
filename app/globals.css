@@ -1,0 +1,334 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================================
+   ADDI DESIGN TOKENS
+
+   Primitive 50-950 color ramps from Addi's Figma design system.
+   Tailwind 4 auto-generates bg-*, text-*, border-* utilities from --color-*.
+   ============================================================================ */
+
+@theme inline {
+  /* shadcn compatibility mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-outfit), "Outfit", sans-serif;
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* shadcn radius system */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  /* ========================================================================
+     NEUTRAL RAMP (50-950)
+     ======================================================================== */
+  --color-neutral-50: #f9fafb;
+  --color-neutral-100: #f3f4f6;
+  --color-neutral-200: #e5e7eb;
+  --color-neutral-300: #d1d5db;
+  --color-neutral-400: #99a1af;
+  --color-neutral-500: #6b7280;
+  --color-neutral-600: #4a5565;
+  --color-neutral-700: #364153;
+  --color-neutral-800: #1f2937;
+  --color-neutral-900: #111827;
+  --color-neutral-950: #030712;
+
+  /* ========================================================================
+     BRAND RAMP (50-950)
+     ======================================================================== */
+  --color-brand-50: #eff8ff;
+  --color-brand-100: #e6f5ff;
+  --color-brand-200: #c7e8ff;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1c67d8;
+  --color-brand-800: #1c4eae;
+  --color-brand-900: #152e72;
+  --color-brand-950: #06154f;
+
+  /* ========================================================================
+     SUCCESS RAMP (50-950)
+     ======================================================================== */
+  --color-success-50: #f0fdf4;
+  --color-success-100: #dcfce7;
+  --color-success-200: #b9f8cf;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #008236;
+  --color-success-800: #126122;
+  --color-success-900: #063c11;
+  --color-success-950: #022207;
+
+  /* ========================================================================
+     DANGER RAMP (50-950)
+     ======================================================================== */
+  --color-danger-50: #fff7f5;
+  --color-danger-100: #ffddd6;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #ff4f42;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #d51f08;
+  --color-danger-800: #a51c0b;
+  --color-danger-900: #700000;
+  --color-danger-950: #420000;
+
+  /* ========================================================================
+     WARNING RAMP (50-950)
+     ======================================================================== */
+  --color-warning-50: #fefad8;
+  --color-warning-100: #fef9c3;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fde453;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #e0a800;
+  --color-warning-600: #d97706;
+  --color-warning-700: #856738;
+  --color-warning-800: #66502e;
+  --color-warning-900: #413111;
+  --color-warning-950: #281c0b;
+
+  /* ========================================================================
+     INFO RAMP (50-950)
+     ======================================================================== */
+  --color-info-50: #f2fafd;
+  --color-info-100: #c6e9f4;
+  --color-info-200: #a5f3fc;
+  --color-info-300: #67e8f9;
+  --color-info-400: #22d3ee;
+  --color-info-500: #069dbb;
+  --color-info-600: #0891b2;
+  --color-info-700: #007694;
+  --color-info-800: #005c78;
+  --color-info-900: #003753;
+  --color-info-950: #001d38;
+
+  /* Focus ring color */
+  --color-focus-ring: #ced0ff;
+
+  /* ========================================================================
+     FONT FAMILY
+     ======================================================================== */
+  --font-family-outfit: var(--font-outfit), "Outfit", sans-serif;
+
+  /* ========================================================================
+     ADDI BORDER RADIUS TOKENS
+     ======================================================================== */
+  --radius-4: 4px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-24: 24px;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #ffffff;
+  --foreground: #030712;
+  --card: #ffffff;
+  --card-foreground: #030712;
+  --popover: #ffffff;
+  --popover-foreground: #030712;
+  --primary: #1c67d8;
+  --primary-foreground: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #030712;
+  --muted: #f3f4f6;
+  --muted-foreground: #6b7280;
+  --accent: #f3f4f6;
+  --accent-foreground: #030712;
+  --destructive: #d51f08;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #ced0ff;
+}
+
+.dark {
+  --background: #030712;
+  --foreground: #f9fafb;
+  --card: #111827;
+  --card-foreground: #f9fafb;
+  --popover: #111827;
+  --popover-foreground: #f9fafb;
+  --primary: #60a5fa;
+  --primary-foreground: #030712;
+  --secondary: #1f2937;
+  --secondary-foreground: #f9fafb;
+  --muted: #1f2937;
+  --muted-foreground: #99a1af;
+  --accent: #1f2937;
+  --accent-foreground: #f9fafb;
+  --destructive: #ff4f42;
+  --border: #1f2937;
+  --input: #1f2937;
+  --ring: #ced0ff;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* ============================================================================
+   TYPOGRAPHY UTILITIES
+   ============================================================================ */
+
+@utility text-display-lg {
+  font-family: var(--font-family-outfit);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+@utility text-display {
+  font-family: var(--font-family-outfit);
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+@utility text-title-screen {
+  font-family: var(--font-family-outfit);
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@utility text-title-section {
+  font-family: var(--font-family-outfit);
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@utility text-title-subsection {
+  font-family: var(--font-family-outfit);
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@utility text-title-body {
+  font-family: var(--font-family-outfit);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@utility text-title-group {
+  font-family: var(--font-family-outfit);
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@utility text-title-legal {
+  font-family: var(--font-family-outfit);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+@utility text-body-large {
+  font-family: var(--font-family-outfit);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+@utility text-body {
+  font-family: var(--font-family-outfit);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+@utility text-legal {
+  font-family: var(--font-family-outfit);
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.3;
+}
+
+@utility text-interactive {
+  font-family: var(--font-family-outfit);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+@utility text-interactive-lg {
+  font-family: var(--font-family-outfit);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================================
+   BRIDGE UTILITIES
+   ============================================================================ */
+
+@utility ring-focus {
+  --tw-ring-color: var(--color-focus-ring);
+}
+
+/* ============================================================================
+   ADDI RADIUS UTILITIES
+   ============================================================================ */
+
+@utility rounded-4 {
+  border-radius: var(--radius-4);
+}
+@utility rounded-8 {
+  border-radius: var(--radius-8);
+}
+@utility rounded-12 {
+  border-radius: var(--radius-12);
+}
+@utility rounded-16 {
+  border-radius: var(--radius-16);
+}
+@utility rounded-24 {
+  border-radius: var(--radius-24);
+}
