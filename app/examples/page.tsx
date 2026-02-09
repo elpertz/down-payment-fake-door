@@ -69,9 +69,9 @@ export default function ShowcasePage() {
           <Link href="/" className={buttonVariants({ variant: "ghost", size: "sm" })}>
             Back Home
           </Link>
-          <h1 className="text-display-lg text-neutral-950">UI Component Examples</h1>
+          <h1 className="text-display-lg text-neutral-950">Component Examples</h1>
           <p className="text-body-large text-neutral-600">
-            Figma-aligned examples for core components and interaction states.
+            Browse and play with the core UI components and their states.
           </p>
         </header>
 

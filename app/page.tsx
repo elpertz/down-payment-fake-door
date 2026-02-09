@@ -8,8 +8,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 const projectLinks = [
   { label: "Home", href: "/" },
-  { label: "Component Examples", href: "/examples" },
-  { label: "Prototype Starters", href: "/prototypes" },
+  { label: "Prototypes", href: "/prototypes" },
+  { label: "Example One", href: "/prototypes/example-one" },
+  { label: "Example Two", href: "/prototypes/example-two" },
   { label: "Project Guide", href: "/docs" },
 ];
 
@@ -32,11 +33,11 @@ export default function HomePage() {
             <CardHeader>
               <CardTitle>Example Project</CardTitle>
               <CardDescription>
-                Create your prototype here.
+                Open an example prototype page.
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <Link href="/prototypes" className={buttonVariants({ variant: "default", size: "default" })}>
+              <Link href="/prototypes/example-one" className={buttonVariants({ variant: "default", size: "default" })}>
                 See Project
               </Link>
             </CardContent>
