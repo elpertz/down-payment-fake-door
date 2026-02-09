@@ -5,7 +5,6 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { motion, type HTMLMotionProps } from "motion/react";
 
 import { cn } from "@/lib/utils";
-import { springConfig } from "@/lib/motion/transitions";
 
 const cardVariants = cva(
   "rounded-xl border bg-white text-neutral-950 shadow-sm",
@@ -13,9 +12,9 @@ const cardVariants = cva(
     variants: {
       variant: {
         default: "border-neutral-200",
-        selected: "border-2 border-brand-700 bg-brand-200 shadow-md",
+        selected: "border-2 border-brand-700 bg-brand-50 shadow-md",
         interactive:
-          "border-neutral-200 cursor-pointer hover:border-neutral-300 active:border-brand-700",
+          "border-neutral-200 cursor-pointer hover:border-neutral-300 hover:bg-neutral-50 active:border-neutral-300 active:bg-neutral-100",
       },
     },
     defaultVariants: {
@@ -30,26 +29,11 @@ export interface CardProps
 
 const Card = React.forwardRef<HTMLDivElement, CardProps>(
   ({ className, variant, ...props }, ref) => {
-    const isInteractive = variant === "interactive";
-
-    const motionProps = isInteractive
-      ? {
-          whileHover: { scale: 1.01, y: -2 },
-          whileTap: { scale: 0.99 },
-          transition: springConfig,
-        }
-      : {};
-
     return (
       <motion.div
         ref={ref}
         className={cn(cardVariants({ variant, className }))}
-        {...motionProps}
         {...props}
-        style={{
-          willChange: isInteractive ? "transform" : undefined,
-          ...props.style,
-        }}
       />
     );
   }
@@ -69,22 +53,22 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = "CardHeader";
 
 const CardTitle = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLHeadingElement,
+  React.HTMLAttributes<HTMLHeadingElement>
 >(({ className, ...props }, ref) => (
-  <div
+  <h3
     ref={ref}
-    className={cn("text-title-body text-brand-700 leading-none tracking-tight", className)}
+    className={cn("text-title-body text-neutral-900 leading-none tracking-tight", className)}
     {...props}
   />
 ));
 CardTitle.displayName = "CardTitle";
 
 const CardDescription = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <div
+  <p
     ref={ref}
     className={cn("text-body text-neutral-600", className)}
     {...props}

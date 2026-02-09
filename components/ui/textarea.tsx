@@ -5,6 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { motion, type HTMLMotionProps } from "motion/react";
 
 import { cn } from "@/lib/utils";
+import { MOTION_ENABLED } from "@/lib/motion/config";
 
 const textareaVariants = cva(
   "flex min-h-[120px] w-full rounded-lg border bg-white px-4 py-3 text-body text-neutral-950 ring-offset-background placeholder:text-neutral-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-focus-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 transition-colors resize-y",
@@ -32,7 +33,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const textareaVariant = error ? "error" : variant;
 
     const motionProps =
-      error && props.value
+      error && props.value && MOTION_ENABLED
         ? {
             animate: {
               x: [0, -4, 4, -4, 4, 0],
@@ -51,7 +52,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         {...motionProps}
         {...props}
         style={{
-          willChange: error ? "transform" : undefined,
+          willChange: error && MOTION_ENABLED ? "transform" : undefined,
           ...props.style,
         }}
       />

@@ -131,7 +131,7 @@
   --color-info-950: #001d38;
 
   /* Focus ring color */
-  --color-focus-ring: #ced0ff;
+  --color-focus-ring: #c7e8ff;
 
   /* ========================================================================
      FONT FAMILY
@@ -167,7 +167,7 @@
   --destructive: #d51f08;
   --border: #e5e7eb;
   --input: #e5e7eb;
-  --ring: #ced0ff;
+  --ring: #c7e8ff;
 }
 
 .dark {
@@ -188,7 +188,7 @@
   --destructive: #ff4f42;
   --border: #1f2937;
   --input: #1f2937;
-  --ring: #ced0ff;
+  --ring: #c7e8ff;
 }
 
 @layer base {

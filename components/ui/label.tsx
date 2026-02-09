@@ -10,9 +10,9 @@ const labelVariants = cva(
   {
     variants: {
       variant: {
-        default: "text-brand-700",
-        secondary: "text-neutral-600",
-        muted: "text-neutral-400",
+        default: "text-neutral-900",
+        secondary: "text-neutral-700",
+        muted: "text-neutral-500",
       },
     },
     defaultVariants: {

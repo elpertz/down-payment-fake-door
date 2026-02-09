@@ -1,5 +1,3 @@
-import type { Transition } from "motion/react";
-
 export const springConfig = {
   type: "spring",
   stiffness: 300,
