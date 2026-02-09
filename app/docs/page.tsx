@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowLeft } from "phosphor-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,6 +12,7 @@ export default function DocsPage() {
       <div className="mx-auto max-w-4xl space-y-8 px-6">
         <header className="space-y-3">
           <Link href="/" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+            <ArrowLeft size={16} />
             Back Home
           </Link>
           <h1 className="text-display-lg text-neutral-950">Project Documentation</h1>
@@ -25,7 +27,7 @@ export default function DocsPage() {
             <CardDescription>Simple flow for starting and iterating quickly.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-2 text-body text-neutral-700">
-            <p>1. Start in <code>/prototypes</code> to build your first screen.</p>
+            <p>1. Start in <code>/prototypes/example-one</code> to build your first screen.</p>
             <p>2. Use <code>/examples</code> to copy component patterns and states.</p>
             <p>3. Reuse existing UI components from <code>/components/ui</code> before creating new ones.</p>
             <p>4. Run <code>pnpm lint</code> and <code>pnpm build</code> before sharing.</p>
