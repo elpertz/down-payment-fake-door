@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, Broadcast, Heart, Info, Plus, Star } from "phosphor-react";
+import { ArrowLeft, ArrowRight, Broadcast, Heart, Info, Plus, Star } from "phosphor-react";
 
 import { Alert } from "@/components/ui/alert";
 import { Avatar } from "@/components/ui/avatar";
@@ -67,6 +67,7 @@ export default function ShowcasePage() {
       <div className="mx-auto max-w-4xl space-y-16 px-6">
         <header className="space-y-3">
           <Link href="/" className={buttonVariants({ variant: "ghost", size: "sm" })}>
+            <ArrowLeft size={16} />
             Back Home
           </Link>
           <h1 className="text-display-lg text-neutral-950">Component Examples</h1>

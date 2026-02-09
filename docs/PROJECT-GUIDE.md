@@ -2,7 +2,7 @@
 
 ## How To Use
 
-1. Open `/prototypes` and create your first flow.
+1. Open `/prototypes/example-one` and create your first flow.
 2. Open `/examples` and copy component patterns.
 3. Reuse existing components from `/components/ui`.
 4. Validate your changes with:

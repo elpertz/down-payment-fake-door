@@ -6,11 +6,19 @@ import { ArrowUpRight } from "phosphor-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
+const prototypeCards = [
+  {
+    title: "Example Project",
+    description: "Open an example prototype page.",
+    href: "/prototypes/example-one",
+    cta: "See Project",
+  },
+];
+
 const projectLinks = [
   { label: "Home", href: "/" },
-  { label: "Prototypes", href: "/prototypes" },
+  { label: "Component Examples", href: "/examples" },
   { label: "Example One", href: "/prototypes/example-one" },
-  { label: "Example Two", href: "/prototypes/example-two" },
   { label: "Project Guide", href: "/docs" },
 ];
 
@@ -29,19 +37,24 @@ export default function HomePage() {
 
         <section>
           <h2 className="mb-4 text-title-section text-neutral-950">Projects</h2>
-          <Card variant="default">
-            <CardHeader>
-              <CardTitle>Example Project</CardTitle>
-              <CardDescription>
-                Open an example prototype page.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Link href="/prototypes/example-one" className={buttonVariants({ variant: "default", size: "default" })}>
-                See Project
-              </Link>
-            </CardContent>
-          </Card>
+          <div className="grid grid-cols-1 gap-4">
+            {prototypeCards.map((prototype) => (
+              <Card key={prototype.href} variant="default">
+                <CardHeader>
+                  <CardTitle>{prototype.title}</CardTitle>
+                  <CardDescription>{prototype.description}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <Link
+                    href={prototype.href}
+                    className={buttonVariants({ variant: "default", size: "default" })}
+                  >
+                    {prototype.cta}
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </section>
         </div>
 
