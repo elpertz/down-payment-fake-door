@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, Broadcast, Heart, Info, Plus, Star } from "phosp
 
 import { Alert } from "@/components/ui/alert";
 import { Avatar } from "@/components/ui/avatar";
+import { Logo } from "@/components/ui/logo";
 import { Button, buttonVariants } from "@/components/ui/button";
 import {
   Card,
@@ -271,6 +272,38 @@ export default function ShowcasePage() {
             <Avatar type="icon" size="md" tone="warning" />
             <Avatar type="icon" size="sm" tone="info" />
             <Avatar type="icon" size="xs" tone="neutral" />
+          </div>
+        </Section>
+
+        <Section title="Logo">
+          <div className="space-y-6">
+            <div>
+              <p className="text-body text-neutral-600 mb-3">Primary</p>
+              <div className="flex items-end gap-4">
+                <Logo type="primary" size="xs" />
+                <Logo type="primary" size="sm" />
+                <Logo type="primary" size="md" />
+                <Logo type="primary" size="lg" />
+                <Logo type="primary" size="xl" />
+              </div>
+            </div>
+            <div>
+              <p className="text-body text-neutral-600 mb-3">Shorthand</p>
+              <div className="flex items-end gap-4">
+                <Logo type="shorthand" size="xs" />
+                <Logo type="shorthand" size="sm" />
+                <Logo type="shorthand" size="md" />
+                <Logo type="shorthand" size="lg" />
+                <Logo type="shorthand" size="xl" />
+              </div>
+            </div>
+            <div className="rounded-lg bg-neutral-900 p-6">
+              <p className="text-body text-neutral-300 mb-3">Inverted (on dark)</p>
+              <div className="flex items-end gap-6">
+                <Logo type="primary" size="lg" invert />
+                <Logo type="shorthand" size="lg" invert />
+              </div>
+            </div>
           </div>
         </Section>
 

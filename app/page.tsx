@@ -5,6 +5,7 @@ import { ArrowUpRight } from "phosphor-react";
 
 import { buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Logo } from "@/components/ui/logo";
 
 const prototypeCards = [
   {
@@ -28,6 +29,7 @@ export default function HomePage() {
       <div className="mx-auto flex min-h-[80dvh] max-w-4xl flex-col justify-between px-6">
         <div className="space-y-10">
         <header className="space-y-3">
+          <Logo type="primary" size="lg" />
           <h1 className="text-display-lg text-neutral-950">UI Kit Template</h1>
           <p className="max-w-2xl text-body-large text-neutral-600">
             A simple starter to build prototypes fast with reusable UI components and

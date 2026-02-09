@@ -24,6 +24,9 @@ export type { InputProps } from "./input";
 export { Label } from "./label";
 export type { LabelProps } from "./label";
 
+export { Logo } from "./logo";
+export type { LogoProps, LogoSize, LogoType } from "./logo";
+
 export { NavButton, navButtonVariants } from "./nav-button";
 
 export { RadioGroup, RadioGroupItem } from "./radio-group";
