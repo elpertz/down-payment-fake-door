@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import { AgentationProvider } from "@/components/agentation-provider";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={outfit.variable}>
-      <body className={`${outfit.className} antialiased`}>{children}</body>
+      <body className={`${outfit.className} antialiased`}>
+        {children}
+        <AgentationProvider />
+      </body>
     </html>
   );
 }

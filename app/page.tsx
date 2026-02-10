@@ -9,10 +9,18 @@ import { Logo } from "@/components/ui/logo";
 
 const prototypeCards = [
   {
-    title: "Example Project",
-    description: "Open an example prototype page.",
-    href: "/prototypes/example-one",
-    cta: "See Project",
+    title: "Cuota Inicial — Opcion 1: Fija",
+    description:
+      "Down payment as first installment. Fixed 4-installment plan (1 today + 3 monthly).",
+    href: "/prototypes/cuota-inicial-opcion-1",
+    cta: "Ver Opcion 1",
+  },
+  {
+    title: "Cuota Inicial — Opcion 2A: Flexible (Summary)",
+    description:
+      "Down payment + dropdown to select cuotas. Summary card shows remaining installments.",
+    href: "/prototypes/cuota-inicial-opcion-2a",
+    cta: "Ver Opcion 2A",
   },
 ];
 
