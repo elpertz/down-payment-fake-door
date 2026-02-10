@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
-import { AgentationProvider } from "@/components/agentation-provider";
+
 import "./globals.css";
 
 const outfit = Outfit({
@@ -11,8 +11,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Addi UI Kit Design Template",
-  description: "Component showcase for Addi's design system built with Next.js and Tailwind CSS",
+  title: "Down Payment Fake-Door Demo",
+  description: "Explore two down payment proposals for Addi: fixed and flexible offerings.",
 };
 
 export default function RootLayout({
@@ -24,7 +24,6 @@ export default function RootLayout({
     <html lang="en" className={outfit.variable}>
       <body className={`${outfit.className} antialiased`}>
         {children}
-        <AgentationProvider />
       </body>
     </html>
   );

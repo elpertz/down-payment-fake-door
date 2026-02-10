@@ -9,18 +9,18 @@ import { Logo } from "@/components/ui/logo";
 
 const prototypeCards = [
   {
-    title: "Cuota Inicial — Opcion 1: Fija",
+    title: "Fixed Down Payment",
     description:
-      "Down payment as first installment. Fixed 4-installment plan (1 today + 3 monthly).",
+      "A clear, fixed installment plan for the down payment: 1 payment today + 3 monthly installments.",
     href: "/prototypes/cuota-inicial-opcion-1",
-    cta: "Ver Opcion 1",
+    cta: "View Fixed Offering",
   },
   {
-    title: "Cuota Inicial — Opcion 2A: Flexible (Summary)",
+    title: "Flexible Down Payment",
     description:
-      "Down payment + dropdown to select cuotas. Summary card shows remaining installments.",
+      "Choose your own installment plan for the down payment with a flexible number of cuotas.",
     href: "/prototypes/cuota-inicial-opcion-2a",
-    cta: "Ver Opcion 2A",
+    cta: "View Flexible Offering",
   },
 ];
 
@@ -38,15 +38,14 @@ export default function HomePage() {
         <div className="space-y-10">
         <header className="space-y-3">
           <Logo type="primary" size="lg" />
-          <h1 className="text-display-lg text-neutral-950">UI Kit Template</h1>
+          <h1 className="text-display-lg text-neutral-950">Down Payment Fake-Door Demo</h1>
           <p className="max-w-2xl text-body-large text-neutral-600">
-            A simple starter to build prototypes fast with reusable UI components and
-            clear folder entry points.
+            Explore two down payment proposals: a fixed offering for clarity and a flexible offering for choice.
           </p>
         </header>
 
         <section>
-          <h2 className="mb-4 text-title-section text-neutral-950">Projects</h2>
+          <h2 className="mb-4 text-title-section text-neutral-950">Proposals</h2>
           <div className="grid grid-cols-1 gap-4">
             {prototypeCards.map((prototype) => (
               <Card key={prototype.href} variant="default">
