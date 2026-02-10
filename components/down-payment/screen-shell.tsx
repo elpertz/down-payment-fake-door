@@ -3,6 +3,7 @@
 import { CaretLeft, X } from "phosphor-react";
 import { motion } from "motion/react";
 import { fadeIn } from "@/lib/motion/variants";
+import { Logo } from "@/components/ui";
 
 interface ScreenShellProps {
   children: React.ReactNode;
@@ -34,9 +35,7 @@ export function ScreenShell({
               <CaretLeft size={20} weight="regular" />
             </button>
           ) : null}
-          <span className="text-title-section font-bold text-brand-700">
-            Addi
-          </span>
+          <Logo type="primary" size="sm" />
           <button
             onClick={onClose ?? (() => window.history.back())}
             className="absolute right-6 flex size-10 items-center justify-center rounded-xl bg-brand-50 text-brand-700"
